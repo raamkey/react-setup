@@ -1,13 +1,8 @@
 import React from "react";
-import {
-	createBrowserRouter,
-	Link,
-	Outlet,
-	RouterProvider,
-} from "react-router";
+import { createHashRouter, Link, Outlet, RouterProvider } from "react-router";
 
 export const createAppRouter = () => {
-	return createBrowserRouter([
+	return createHashRouter([
 		{
 			path: "/",
 			element: (
