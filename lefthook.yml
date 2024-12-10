@@ -1,0 +1,13 @@
+pre-commit:
+    commands:
+        "checking format & linting":
+            glob: "*.{js,ts,jsx,tsx,json,jsonc}"
+            run: pnpm biome check --write --no-errors-on-unmatched --files-ignore-unknown=true --colors=off {staged_files}
+            stage_fixed: true
+
+# Validate commit messages; can be used with or without cz.
+commit-msg:
+    parallel: true
+    commands:
+        lint-commit-msg:
+            run: pnpm commitlint --edit {1}
